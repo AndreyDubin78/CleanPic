@@ -1,0 +1,24 @@
+# server.py
+from fastapi import FastAPI, UploadFile
+import requests
+import base64
+
+app = FastAPI()
+
+# твой API ключ Replicate
+API_TOKEN = "ВАШ_API_KEY"
+
+@app.post("/process-image")
+async def process_image(file: UploadFile):
+    image_bytes = await file.read()
+    
+    # Отправляем на AI сервис (пример Replicate)
+    response = requests.post(
+        "https://api.replicate.com/v1/predictions",
+        headers={"Authorization": f"Token {API_TOKEN}"},
+        files={"file": image_bytes},
+        json={"version": "lama-text-removal"}  # модель LaMa
+    )
+
+    result = response.json()
+    return {"result": result}
