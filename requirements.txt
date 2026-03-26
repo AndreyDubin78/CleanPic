@@ -1,7 +1,7 @@
 fastapi
 uvicorn
 requests
-easyocr==1.6.2  # старая версия без необходимости компиляции Rust
+easyocr==1.7.2
 opencv-python
 pillow
 numpy
