@@ -1,7 +1,11 @@
-fastapi
-uvicorn
-requests
+fastapi==0.135.2
+uvicorn==0.22.0
+requests==2.33.0
 easyocr==1.7.2
-opencv-python
-pillow
-numpy
+opencv-python-headless==4.7.0.72
+pillow==12.1.1
+numpy==1.26.4
+scipy==1.10.1
+scikit-image==0.21.0
+torch==2.11.0
+torchvision==0.26.0
